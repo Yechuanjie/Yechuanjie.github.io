@@ -9,7 +9,7 @@ $(function() {
 	initRelIconAndAvatar();
 	initWrapBack();
 	console.log(
-		'%c琥珀丶川',
+		'%c叶川杰的个人主页',
 		`text-shadow:
 		0 1px 0 #ccc,
 		0 2px 0 #c9c9c9,
@@ -24,16 +24,16 @@ $(function() {
 		0 10px 10px rgba(0,0,0,.2),
 		0 20px 20px rgba(0,0,0,.15);
 		font-size:30px;
-		color:#bada55;`
+		padding: 30px 30px 30px 30px;
+		color:#bada55;`,
+		`https://yechuanjie.com`
 	);
-	console.log(`%c`, `padding:150px 200px;line-height:120px;
-		background:url('http://yechuanjie-image.oss-cn-beijing.aliyuncs.com/18-5-31/66337986.jpg') no-repeat;
-		background-size:contain;`);
+	// console.log(`%c`, `padding:150px 200px;line-height:120px;
+	// 	background:url('http://yechuanjie-image.oss-cn-beijing.aliyuncs.com/18-5-31/66337986.jpg') no-repeat;
+	// 	background-size:contain;`);
 });
 
 function initRelIconAndAvatar() {
-	let OriginTitle = document.title || '琥珀丶川';
-	let titleTime;
 	let iconList = [
 		'https://yechuanjie-image.oss-cn-beijing.aliyuncs.com/blog/腰果.png',
 		'https://yechuanjie-image.oss-cn-beijing.aliyuncs.com/blog/甜甜圈.png',
@@ -56,29 +56,9 @@ function initRelIconAndAvatar() {
 		'https://yechuanjie-image.oss-cn-beijing.aliyuncs.com/blog/碧根果.png',
 		'https://yechuanjie-image.oss-cn-beijing.aliyuncs.com/blog/棒冰.png'
 	];
-	let iconIndex = 0;
-	$(document).on('visibilitychange', function() {
-		if (document.hidden) {
-			if (iconIndex < iconList.length - 1) {
-				iconIndex += 1;
-			}
-			else {
-				iconIndex = 0;
-			}
-			$('[rel=icon]').attr('href', iconList[iconIndex]);
-			$('.avatar').attr('src', iconList[iconIndex]);
-			document.title = OriginTitle;
-			clearTimeout(titleTime);
-		}
-		else {
-			document.title = OriginTitle;
-			$('[rel=icon]').attr('href', iconList[iconIndex]);
-			$('.avatar').attr('src', iconList[iconIndex]);
-			titleTime = setTimeout(function() {
-				document.title = OriginTitle;
-			}, 2000);
-		}
-	});
+	let iconIndex = Math.floor(Math.random() * iconList.length);
+	$('.avatar').attr('src', iconList[iconIndex]);
+	$('[rel=icon]').attr('href', iconList[iconIndex]);
 }
 
 function initWrapBack() {

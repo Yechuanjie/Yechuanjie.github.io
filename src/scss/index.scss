@@ -151,18 +151,14 @@
 							&:hover {
 								transform: scale(1.1);
 								background-color: rgba($color: #ffffff, $alpha: 0.1);
-								&.fa-pencil-square-o {
-									color: mediumspringgreen;
-								}
 								&.fa-pencil {
-									color: #64ceaa;
+									color: green;
 								}
 								&.fa-github {
 									color: #333333;
-									;
 								}
-								&.fa-book {
-									color: #0084FF;
+								&.fa-envelope-o {
+									color: #BC392B;
 								}
 								&.fa-pencil-square-o {
 									color: mediumspringgreen;
