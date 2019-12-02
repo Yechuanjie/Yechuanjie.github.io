@@ -6,7 +6,7 @@ import '../scss/index.scss';
 // console.log('%c Setting Sync ', 'background: #234;color:#bada55;font-size:25px');
 // console.warn('1. install Setting Sync \n 2. press shift + alt + d \n 3. input GistID:' + GistID);
 $(function() {
-	initRelIcon();
+	initRelIconAndAvatar();
 	initWrapBack();
 	console.log(
 		'%c琥珀丶川',
@@ -31,7 +31,7 @@ $(function() {
 		background-size:contain;`);
 });
 
-function initRelIcon() {
+function initRelIconAndAvatar() {
 	let OriginTitle = document.title || '琥珀丶川';
 	let titleTime;
 	let iconList = [
@@ -58,7 +58,6 @@ function initRelIcon() {
 	];
 	let iconIndex = 0;
 	$(document).on('visibilitychange', function() {
-		console.info(`hidden`);
 		if (document.hidden) {
 			if (iconIndex < iconList.length - 1) {
 				iconIndex += 1;
@@ -67,12 +66,14 @@ function initRelIcon() {
 				iconIndex = 0;
 			}
 			$('[rel=icon]').attr('href', iconList[iconIndex]);
+			$('.avatar').attr('src', iconList[iconIndex]);
 			document.title = OriginTitle;
 			clearTimeout(titleTime);
 		}
 		else {
 			document.title = OriginTitle;
 			$('[rel=icon]').attr('href', iconList[iconIndex]);
+			$('.avatar').attr('src', iconList[iconIndex]);
 			titleTime = setTimeout(function() {
 				document.title = OriginTitle;
 			}, 2000);

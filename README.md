@@ -1,5 +1,5 @@
 # 个人博客主页
-[![Build Status](https://travis-ci.org/Yechuanjie/blog_index.svg?branch=master)](https://travis-ci.org/Yechuanjie/blog_index)
+[![Build Status](https://travis-ci.org/Yechuanjie/Yechuanjie.github.io.svg?branch=master)](https://travis-ci.org/Yechuanjie/Yechuanjie.github.io)
 > 个人博客 雨天更新~
 
 ## Build Setup
