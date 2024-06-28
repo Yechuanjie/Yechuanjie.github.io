@@ -41,6 +41,18 @@ jobs:
           ref: ${{ env.GIT_DEPLOY_BRANCH }}
           path: .deploy_git
 
+      - name: Configuration environment
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          sudo timedatectl set-timezone "Asia/Shanghai"
+          mkdir -p ~/.ssh/
+          echo "$GITHUB_TOKEN" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+          git config --global user.name $GIT_USER
+          git config --global user.email $GIT_EMAIL
+
       - name: 使用Node.js版本：${{ matrix.node_version }}
         uses: actions/setup-node@v1
         with:
@@ -55,10 +67,8 @@ jobs:
       - name: 部署到GitHub
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          token: ${{secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           repository-name: ${{ env.GIT_DEPLOY_REPO }}
           branch: master # 推送到master
           folder: dist # 部署文件夹
-          commit-message: '${{ github.event.head_commit.message }} 更新版本'
-
-   
+          commit-message: 更新版本
