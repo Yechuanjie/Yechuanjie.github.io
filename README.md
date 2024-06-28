@@ -24,6 +24,6 @@ npm run build --report
 ##### 自定义域名 CNAME
 
 ```
-blog.9cnext.com
+me.9cnext.com
 
 ```
