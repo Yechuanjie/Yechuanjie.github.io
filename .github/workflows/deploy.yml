@@ -57,6 +57,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository-name: ${{ env.GIT_DEPLOY_REPO }}
-          branch: master # 推送到master
+          branch: ${{ env.GIT_DEPLOY_BRANCH }} # 推送到master
           folder: dist # 部署文件夹
           commit-message: 更新版本
