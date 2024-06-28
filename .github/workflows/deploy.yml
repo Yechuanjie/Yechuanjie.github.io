@@ -16,7 +16,7 @@ env:
   # After Hexo Compiles Use This Git Mailbox To Deploy To The Github Warehouse
   GIT_EMAIL: 1102684711@qq.com
   # The Git Hub Warehouse To Be Deployed After Hexo Compiles
-  GIT_DEPLOY_REPO: https://${GH_TOKEN}@${GH_REF}
+  GIT_DEPLOY_REPO: Yechuanjie/Yechuanjie.github.io
   # Hexo Compiles The Branch To Deploy After Compilation
   GIT_DEPLOY_BRANCH: master
 
