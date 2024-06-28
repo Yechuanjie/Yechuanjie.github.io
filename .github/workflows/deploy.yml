@@ -1,0 +1,68 @@
+# Action's Name
+name: AutoDeploy
+
+on:
+  # Triggering Condition 1 Main Branch Performs The Task After Receiving Push
+  push:
+    branches:
+      - index
+  # Triggering Condition 2 Manual Button
+  workflow_dispatch:
+
+# Putting Environment Variables Here You Need To Replace It With Your Own
+env:
+  # After Hexo Compiles Use This Git User To Deploy To The Github Warehouse
+  GIT_USER: yechuanjie
+  # After Hexo Compiles Use This Git Mailbox To Deploy To The Github Warehouse
+  GIT_EMAIL: 1102684711@qq.com
+  # The Git Hub Warehouse To Be Deployed After Hexo Compiles
+  GIT_DEPLOY_REPO: https://${GH_TOKEN}@${GH_REF}
+  # Hexo Compiles The Branch To Deploy After Compilation
+  GIT_DEPLOY_BRANCH: master
+
+jobs:
+  build:
+    name: Build on node ${{ matrix.node_version }} and ${{ matrix.os }}
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node_version: [16.x]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Checkout deploy repo
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.GIT_DEPLOY_REPO }}
+          ref: ${{ env.GIT_DEPLOY_BRANCH }}
+          path: .deploy_git
+
+      - name: Use Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
+
+      - name: Configuration environment
+        env:
+          HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}}
+        run: |
+          sudo timedatectl set-timezone "Asia/Shanghai"
+          mkdir -p ~/.ssh/
+          echo "$HEXO_DEPLOY_PRI" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+          git config --global user.name $GIT_USER
+          git config --global user.email $GIT_EMAIL
+
+      - name: Install dependencies
+        run: |
+          npm install
+          npm rebuild node-sass
+
+      - name: Deploy hexo
+        run: |
+          npm run build
