@@ -20,10 +20,3 @@ npm run build --report
 ```
 
 ----
-
-##### 自定义域名 CNAME
-
-```
-me.9cnext.com
-
-```
