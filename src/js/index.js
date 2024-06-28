@@ -26,7 +26,7 @@ $(function() {
 		font-size:30px;
 		padding: 30px 30px 30px 30px;
 		color:#bada55;`,
-		`https://yechuanjie.com`
+		`https://blog.9cnext.com`
 	);
 	// console.log(`%c`, `padding:150px 200px;line-height:120px;
 	// 	background:url('http://yechuanjie-image.oss-cn-beijing.aliyuncs.com/18-5-31/66337986.jpg') no-repeat;
