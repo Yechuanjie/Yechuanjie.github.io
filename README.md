@@ -23,6 +23,6 @@ npm run build --report
 
 ##### 自定义域名 CNAME
 ```
-yechuanjie.com
+9cnext.com
 
 ```
