@@ -1,4 +1,5 @@
 # 个人博客主页
+
 [![Build Status](https://travis-ci.org/Yechuanjie/Yechuanjie.github.io.svg?branch=master)](https://travis-ci.org/Yechuanjie/Yechuanjie.github.io)
 > 个人博客 雨天更新~
 
@@ -18,11 +19,11 @@ npm run build
 npm run build --report
 ```
 
-
 ----
 
 ##### 自定义域名 CNAME
+
 ```
-9cnext.com
+blog.9cnext.com
 
 ```
