@@ -72,4 +72,4 @@ jobs:
           git init
           git add .
           git commit -m "Update"
-          git push -f "https://${{GH_TOKEN}}@${{GH_REF}}" master:master
+          git push -f "https://github.com/${{env.GIT_DEPLOY_REPO}}" master:master
