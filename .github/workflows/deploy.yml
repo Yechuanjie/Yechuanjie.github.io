@@ -46,17 +46,17 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
 
-      - name: Configuration environment
-        env:
-          HEXO_DEPLOY: ${{secrets.HEXO_DEPLOY}}
-        run: |
-          sudo timedatectl set-timezone "Asia/Shanghai"
-          mkdir -p ~/.ssh/
-          echo "$HEXO_DEPLOY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-          git config --global user.name $GIT_USER
-          git config --global user.email $GIT_EMAIL
+      # - name: Configuration environment
+      #   env:
+      #     HEXO_DEPLOY: ${{secrets.HEXO_DEPLOY}}
+      #   run: |
+      #     sudo timedatectl set-timezone "Asia/Shanghai"
+      #     mkdir -p ~/.ssh/
+      #     echo "$HEXO_DEPLOY" > ~/.ssh/id_rsa
+      #     chmod 600 ~/.ssh/id_rsa
+      #     ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+      #     git config --global user.name $GIT_USER
+      #     git config --global user.email $GIT_EMAIL
 
       - name: Install dependencies and build
         run: |
@@ -64,12 +64,24 @@ jobs:
           npm rebuild node-sass
           npm run build
 
-      - name: Push to github master
-        run: |
-          cd dist
-          echo 'blog.9cnext.com' > CNAME
 
-          git init
-          git add .
-          git commit -m "Update"
-          git push -f "https://github.com/${{env.GIT_DEPLOY_REPO}}" master:master
+      - name: 部署到GitHub
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{secrets.HEXO_DEPLOY }}
+          repository-name: ${{ env.GIT_DEPLOY_REPO }}
+          branch: master
+          folder: dist
+          # commit-message: '${{ github.event.head_commit.message }} Updated By Github Actions'
+          commit-message: '更新版本'
+
+      # - name: Push to github master
+      #   run: |
+      #     cd dist
+      #     echo 'blog.9cnext.com' > CNAME
+
+      #     git init
+      #     git add .
+      #     git commit -m "Update"
+      #     git push -f "https://github.com/${{env.GIT_DEPLOY_REPO}}" master:master
+
