@@ -57,16 +57,6 @@ description: 基于 vitepress 打造的适合图文资源分享的博客主题
   6. pinia状态管理
   7. 时间友好化组件
 
-<ArticleLink via="post" :work="{
-    title: 'shiheme/appbeebee',
-    view: 'https://appbeebee.com/',
-    github: 'shiheme/appbeebee',
-    coveross: '',
-    beecode: '',
-    viewtit: '访问网站',
-    wxwords: '',
-    }" />
-
 ## 安装
 
 克隆项目或者直接前往 github仓库页面下载 zip包

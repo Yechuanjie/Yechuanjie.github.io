@@ -10,9 +10,9 @@ export interface View {
 
 export interface ThemeConfig extends DefaultTheme.Config {
   sidebar?: object[]
-  search: any
-  nav: any
-  socialLinks: any
+  search?: any
+  nav?: any
+  socialLinks?: any
   music?: Song[]
   outlineTitle?: string
   docFooter?: object

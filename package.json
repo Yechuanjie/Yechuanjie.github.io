@@ -1,13 +1,13 @@
 {
-  "name": "@shiheme/appbeebee",
+  "name": "blog",
   "version": "1.1.0",
-  "description": "基于 vitepress 打造的适合图文资源分享的博客主题",
-  "author": "小鱼哥",
+  "description": "个人博客",
+  "author": "Yecuk",
   "license": "MIT",
-  "homepage": "https://appbeebee.com/",
+  "homepage": "https://Yechuanjie.github.io/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shiheme/appbeebee"
+    "url": "https://github.com/Yechuanjie/Yechuanjie.github.io"
   },
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
   "keywords": [
     "vitepress",
     "theme",
-    "APP比比"
+    "blog"
   ],
   "type": "module",
   "devDependencies": {

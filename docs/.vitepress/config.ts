@@ -6,7 +6,7 @@ import type { ThemeConfig } from './theme/types'
 import mdItCustomAttrs from 'markdown-it-custom-attrs'
 import { chineseSearchOptimize, pagefindPlugin } from 'vitepress-plugin-pagefind'
 
-export default defineConfig<ThemeConfig>({
+export default defineConfig({
   lang: 'zh-cn',
   markdown: {
     config: md => {
@@ -16,47 +16,45 @@ export default defineConfig<ThemeConfig>({
       })
     }
   },
-  title: 'APP比比',
+  title: '小米粥',
   base: '/',
   head,
-  description: 'github开源作品，开源小程序作品，vueJS项目作品，vue3+ts+vite构建项目教学',
+  description: '个人博客，每个雨天更新~ | Blog & 分享',
   ignoreDeadLinks: true,
   themeConfig: {
-    beecodeurl: 'https://www.appbeebee.com/', //这里是内页ArticleLink组件用到的跳转第三方网址，一般用不到，仅仅用于二次开发
     sidebar: [{}], //这里如果删掉，左侧栏的内容全部不显示。页面布局会变成通栏
     nav: [
       {
-        text: '比比活动福利',
-        link: 'https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg2NjY4NDM3MQ==&action=getalbum&album_id=2990480834551906308#wechat_redirect'
-      },
-      { text: '比比原创小程序', link: 'https://beebee.work/' }
+        text: 'AI生成界面',
+        link: 'https://mastergo.com/'
+      }
     ],
     music: [
       //音乐列表，音乐播放器参数在.vitepress/store/player.ts。封面和歌词不支持可自行按照文章教程修改
-      // {
-      //     "id": 1,
-      //     "title": "陷落Falling",
-      //     "author": "不知名选手Au / 马也_Crabbit",
-      //     "url": "https://res.wx.qq.com/voice/getvoice?mediaid=MzUzMDUzMjQyMl8xMDAwMDE0Nzk=",
-      //     "pic": "https://enshimama.oss-cn-shanghai.aliyuncs.com/smartgallery/music/01.jpg",
-      //     "lrc": ""
-      // },
-      // {
-      //     "id": 2,
-      //     "title": "一个人想着一个人 ",
-      //     "author": "如懿",
-      //     "url": "https://res.wx.qq.com/voice/getvoice?mediaid=MzUzMDUzMjQyMl8xMDAwMDE0ODA=",
-      //     "pic": "https://enshimama.oss-cn-shanghai.aliyuncs.com/smartgallery/music/02.jpg",
-      //     "lrc": ""
-      // },
-      // {
-      //     "id": 3,
-      //     "title": "夜车（Cover 曾轶可）",
-      //     "author": "姜铭杨",
-      //     "url": "https://res.wx.qq.com/voice/getvoice?mediaid=MzUzMDUzMjQyMl8xMDAwMDE0ODE=",
-      //     "pic": "https://enshimama.oss-cn-shanghai.aliyuncs.com/smartgallery/music/03.jpg",
-      //     "lrc": ""
-      // },
+      {
+        id: 1,
+        title: '陷落Falling',
+        author: '不知名选手Au / 马也_Crabbit',
+        url: 'https://res.wx.qq.com/voice/getvoice?mediaid=MzUzMDUzMjQyMl8xMDAwMDE0Nzk=',
+        pic: 'https://enshimama.oss-cn-shanghai.aliyuncs.com/smartgallery/music/01.jpg',
+        lrc: ''
+      },
+      {
+        id: 2,
+        title: '一个人想着一个人 ',
+        author: '如懿',
+        url: 'https://res.wx.qq.com/voice/getvoice?mediaid=MzUzMDUzMjQyMl8xMDAwMDE0ODA=',
+        pic: 'https://enshimama.oss-cn-shanghai.aliyuncs.com/smartgallery/music/02.jpg',
+        lrc: ''
+      },
+      {
+        id: 3,
+        title: '夜车（Cover 曾轶可）',
+        author: '姜铭杨',
+        url: 'https://res.wx.qq.com/voice/getvoice?mediaid=MzUzMDUzMjQyMl8xMDAwMDE0ODE=',
+        pic: 'https://enshimama.oss-cn-shanghai.aliyuncs.com/smartgallery/music/03.jpg',
+        lrc: ''
+      },
       {
         id: 4,
         title: '迎春花 / 財神到 / 祝福你 (廣東)',
@@ -167,7 +165,7 @@ export default defineConfig<ThemeConfig>({
     website: {
       copyadd: true, //用户复制页面内容时尾巴自动添加版权声明
       perpage: 12, //列表页每页显示数量
-      homeBanner: false, //显示首页 banner,banner列表在上面 banner中配置
+      homeBanner: true, //显示首页 banner,banner列表在上面 banner中配置
       bannerHeight: 200, //banner高度
       showWelcome: false, //是否显示首页底部右下角弹框，（调试时弹框不显示的话先关闭浏览器再运行，因为有可能开启了缓存）内容请在组件.vitepress/theme/components/Welcome.vue编写
       welcomeusestate: false, //底部弹框是否使用sessionStorage缓存(即不关闭页面仅显示一次)
@@ -180,7 +178,7 @@ export default defineConfig<ThemeConfig>({
       cardMusic: true, //是否显示播放音乐，音乐列表在上面 music中配置
       cardCoffee: true, //是否显示打赏咖啡，
       coffeeQrcode:
-        'https://image.baidu.com/search/down?url=https://fc.sinaimg.cn/large/6364aa43gy1hm0f859sm6j208c08cabm.jpg', //打赏咖啡二维码图片地址。如果是跳转网页地址需自行修改代码
+        'https://github.com/Yechuanjie/picx-images-hosting/raw/master/20250423/微信图片_20250423182837_8.9rjljru4kb.png', //打赏咖啡二维码图片地址。如果是跳转网页地址需自行修改代码
       showLantern: false, //是否显示灯笼挂件
       lanternText: ['新', '年'], //灯笼上的字,数组形式
       showFirework: false, //是否显示侧栏烟花特效
@@ -257,15 +255,15 @@ export default defineConfig<ThemeConfig>({
         '恭喜发财'
       ], //烟花许愿关键词
       showFooter: true, //是否显示全局底部信息
-      icpRecordCode: '鄂ICP备2022014994号-1', //网站备案号
-      publicSecurityRecordCode: '鄂公网安备42282202000143号', //公安备案号
+      icpRecordCode: '', //网站备案号
+      publicSecurityRecordCode: '', //公安备案号
       link: 'https://appbeebee.com/'
     },
     logo: {
       light: '/logo.png',
       dark: '/logo.png'
     }
-  },
+  } as ThemeConfig,
   srcExclude: ['README.md'],
   vite: {
     server: {

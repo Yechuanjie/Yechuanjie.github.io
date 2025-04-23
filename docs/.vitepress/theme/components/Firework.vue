@@ -71,7 +71,7 @@ const changebackvoice = () => {
 }
 
 const MyMath = (function MyMathFactory(Math) {
-  const MyMath = {}
+  const MyMath: any = {}
 
   // degree/radian conversion constants
   MyMath.toDeg = 180 / Math.PI
