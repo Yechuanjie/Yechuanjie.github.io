@@ -75,9 +75,17 @@ const pageChange = (e: any) => {
   router.go(`${location.value.origin}${router.route.path}?${searchParams.toString()}`)
 }
 
+interface SearchParams {
+  tag: string
+  category: string
+  year: string
+  month: string
+  page: string
+}
+
 router.onBeforeRouteChange = to => {
   const url = new URL(to, window.location.origin)
-  const params = formatSearch(url.search)
+  const params = formatSearch<SearchParams>(url.search)
   activeTag.value = params?.tag || ''
   activeCategory.value = params?.category || ''
   activeYear.value = params?.year || ''

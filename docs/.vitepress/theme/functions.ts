@@ -9,19 +9,19 @@ const { copy, isSupported } = useClipboard()
 import { toast, type ToastOptions } from 'vue3-toastify'
 
 // 文字格式转换
-export function formatSearch(se: any) {
+export function formatSearch<T = any>(se: string) {
   if (typeof se !== 'undefined') {
     se = se.substr(1)
-    var arr = se.split('&'),
-      obj = {},
-      newarr = []
+    const arr = se.split('&')
+    const obj = {}
+    let newarr: string[] = []
     arr.forEach((item: any) => {
       newarr = item.split('=')
       if (newarr[0]) {
         obj[newarr[0]] = decodeURIComponent(newarr[1])
       }
     })
-    return obj
+    return obj as T
   }
 }
 
