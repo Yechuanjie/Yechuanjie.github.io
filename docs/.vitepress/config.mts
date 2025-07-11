@@ -45,6 +45,7 @@ export default defineConfig({
     css: {
       preprocessorOptions: {
         scss: {
+          api: 'modern',
           additionalData: `@use "docs/.vitepress/theme/element.scss" as *;`
         }
       }
@@ -53,7 +54,6 @@ export default defineConfig({
       AutoImport({
         imports: ['vue'],
         dts: './.vitepress/theme/types/auto-imports.d.ts',
-        // dts: '../.vitepress/types/auto-imports.d.ts',
         resolvers: [ElementPlusResolver()]
       }),
       Components({
@@ -63,7 +63,6 @@ export default defineConfig({
           })
         ],
         dts: './.vitepress/theme/types/component.d.ts',
-        // dts: '../.vitepress/types/component.d.ts',
         directoryAsNamespace: true
       }),
       UnoCSS()
