@@ -2,14 +2,14 @@ import { defineConfig } from 'vitepress'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'zh-CN',
   title: 'Yechuanjie',
   description: '',
-  srcDir: 'src',
+  // srcDir: 'src',
   cleanUrls: true,
   appearance: 'dark',
   themeConfig: {
@@ -42,20 +42,28 @@ export default defineConfig({
     sidebarMenuLabel: '菜单'
   },
   vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@use "docs/.vitepress/theme/element.scss" as *;`
+        }
+      }
+    },
     plugins: [
       AutoImport({
         imports: ['vue'],
-        dts: '../.vitepress/types/auto-imports.d.ts',
-        resolvers: [AntDesignVueResolver()]
+        dts: './.vitepress/theme/types/auto-imports.d.ts',
+        // dts: '../.vitepress/types/auto-imports.d.ts',
+        resolvers: [ElementPlusResolver()]
       }),
       Components({
         resolvers: [
-          AntDesignVueResolver({
-            importStyle: 'css-in-js',
-            resolveIcons: true
+          ElementPlusResolver({
+            importStyle: 'sass'
           })
         ],
-        dts: '../.vitepress/types/component.d.ts',
+        dts: './.vitepress/theme/types/component.d.ts',
+        // dts: '../.vitepress/types/component.d.ts',
         directoryAsNamespace: true
       }),
       UnoCSS()
