@@ -1,5 +1,7 @@
 <template>
-  <Layout></Layout>
+  <Layout>
+    <!-- <template></template> -->
+  </Layout>
 </template>
 
 <script setup lang="ts">
@@ -12,12 +14,7 @@ const { isDark } = useData()
 watch(
   isDark,
   () => {
-    // 设置arco-design的暗黑模式
-    if (isDark.value) {
-      document.body.setAttribute('arco-theme', 'dark')
-    } else {
-      document.body.removeAttribute('arco-theme')
-    }
+    console.info('isDark', isDark.value)
   },
   { immediate: true }
 )

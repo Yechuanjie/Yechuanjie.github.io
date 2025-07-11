@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import { ArcoResolver } from 'unplugin-vue-components/resolvers'
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -45,17 +45,17 @@ export default defineConfig({
     plugins: [
       AutoImport({
         imports: ['vue'],
-        dts: './types/auto-imports.d.ts',
-        resolvers: [ArcoResolver()]
+        dts: '../.vitepress/types/auto-imports.d.ts',
+        resolvers: [AntDesignVueResolver()]
       }),
       Components({
-        dirs: './theme/components',
         resolvers: [
-          ArcoResolver({
-            sideEffect: true
+          AntDesignVueResolver({
+            importStyle: 'css-in-js',
+            resolveIcons: true
           })
         ],
-        dts: './types/component.d.ts',
+        dts: '../.vitepress/types/component.d.ts',
         directoryAsNamespace: true
       }),
       UnoCSS()

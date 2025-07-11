@@ -9,7 +9,7 @@
       </div>
 
       <div class="flex gap-2 mt-10">
-        <a href="/blog" title="blog">
+        <a href="/posts" title="blog">
           <div class="i-mdi-playlist-edit size-8 color-[var(--vp-c-text-1)]"></div>
         </a>
 

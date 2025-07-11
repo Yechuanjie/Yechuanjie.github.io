@@ -8,7 +8,8 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    ASpace: typeof import('@arco-design/web-vue')['Space']
-    ATag: typeof import('@arco-design/web-vue')['Tag']
+    APagination: typeof import('ant-design-vue/es')['Pagination']
+    ASpace: typeof import('ant-design-vue/es')['Space']
+    ATag: typeof import('ant-design-vue/es')['Tag']
   }
 }

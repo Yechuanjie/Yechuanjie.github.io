@@ -1,5 +1,5 @@
 ---
-title: 博客
+title: 首页
 ---
 
 <Home />
