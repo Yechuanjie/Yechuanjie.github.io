@@ -1,5 +1,5 @@
 ---
-title: 首页
+title: 博客
 ---
 
-<home-desc />
+<Home />

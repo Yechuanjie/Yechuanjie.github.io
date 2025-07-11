@@ -1,15 +1,15 @@
 ---
 title: Taro初探
-date: 2019-02-21 13:18:11
+date: 2017-02-21 13:18:11
 tags:
   - Taro
   - React
-categories: 多端统一
+categories: 多端框架
 ---
 
 👽 `Taro` ['tɑ:roʊ]，泰罗·奥特曼，宇宙警备队总教官，实力最强的奥特曼。多端统一开发框架，支持用 React 的开发方式编写一次代码，生成能运行在 `小程序端`、`H5`、`React Native` 等各平台的应用。
 
-<!-- more -->
+---
 
 ### JSX 篇
 

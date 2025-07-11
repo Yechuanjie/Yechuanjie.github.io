@@ -10,15 +10,15 @@
 
       <div class="flex gap-2 mt-10">
         <a href="/blog" title="blog">
-          <div class="i-mdi-playlist-edit size-8 color-#3c3c43 dark:(color-#dfdfd6)"></div>
+          <div class="i-mdi-playlist-edit size-8 color-[var(--vp-c-text-1)]"></div>
         </a>
 
         <a href="https://github.com/Yechuanjie" title="github" target="_blank">
-          <div class="i-mdi-github size-8 color-#3c3c43 dark:(color-#dfdfd6)"></div>
+          <div class="i-mdi-github size-8 color-[var(--vp-c-text-1)]"></div>
         </a>
 
         <a href="mailto:1102684711@qq.com" title="email">
-          <div class="i-mdi-email size-8 color-#3c3c43 dark:(color-#dfdfd6)"></div>
+          <div class="i-mdi-email size-8 color-[var(--vp-c-text-1)]"></div>
         </a>
       </div>
     </div>
@@ -40,17 +40,10 @@ import { onMounted } from 'vue'
     transform: translateY(-70%) rotate(70deg);
     width: 10px;
     height: 10px;
-    border: 2px solid black;
+    border: 2px solid var(--vp-c-text-1);
     border-right: none;
     border-top: none;
     border-bottom-left-radius: 5px;
-  }
-}
-.dark {
-  .tag {
-    &::after {
-      border-color: white;
-    }
   }
 }
 </style>
