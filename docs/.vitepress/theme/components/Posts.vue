@@ -27,6 +27,21 @@ onMounted(() => {
 })
 </script>
 <style lang="scss" scoped>
+/* 去掉.vp-doc li + li 的 margin-top */
+// .vp-doc ul, .vp-doc ol
+.pagination-container {
+  margin-top: 60px;
+  :deep(li) {
+    margin-top: 0px;
+  }
+}
+
+:deep() {
+  .el-pager {
+    padding-left: 0;
+  }
+}
+
 .posts {
   .post-card {
     &:first-child {
@@ -40,12 +55,6 @@ onMounted(() => {
       &:hover {
         text-decoration: underline;
       }
-    }
-  }
-
-  :deep() {
-    .el-pager {
-      padding-left: 0;
     }
   }
 }

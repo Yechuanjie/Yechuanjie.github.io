@@ -1,13 +1,10 @@
-$theme-color: #163f7e;
-$theme-color-dark: #b87545;
-
 :root {
-  --vp-c-blue-1: #{$theme-color};
+  --vp-c-blue-1: #163f7e;
   --vp-c-blue-2: #1e946b;
   --vp-c-blue-3: #b6bcc2;
   --vp-c-blue-soft: rgba(110, 156, 190, 0.14);
 
-  --vp-c-yellow-1: #{$theme-color-dark};
+  --vp-c-yellow-1: #b87545;
   --vp-c-yellow-2: #a5c650;
   --vp-c-yellow-3: #fa9f5e;
   --vp-c-yellow-soft: rgba(186, 186, 186, 0.14);
@@ -29,17 +26,17 @@ body {
   line-height: unset;
 }
 
-.el-pager {
-  padding-left: 0;
+// todo 重置element plus的主题
+:root {
+  --td-border-level-2-color: var(--vp-c-brand-soft) !important;
+  --td-brand-color: var(--vp-c-brand-1) !important;
+  --td-brand-color-light: var(--vp-c-brand-soft) !important;
+  --td-brand-color-hover: var(--vp-c-brand-1) !important;
+  --td-brand-color-active: var(--vp-c-brand-2) !important;
 }
 
-html.dark {
-  /* 自定义深色背景颜色 */
-  --el-bg-color: var(--vp-c-brand-1);
+.dark {
+  .el-pagination.is-background .el-pager li.is-active {
+    background-color: var(--vp-c-brand-1);
+  }
 }
-
-// .dark {
-//   .el-pagination.is-background .el-pager li.is-active {
-//     background-color: var(--vp-c-brand-1);
-//   }
-// }

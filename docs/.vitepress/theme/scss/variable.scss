@@ -1,7 +1,15 @@
-// @forward 'element-plus/theme-chalk/src/common/var.scss' with (
-//   $colors: (
-//     'primary': (
-//       'base': $theme-color
-//     )
-//   )
-// );
+$color-1: #163f7e;
+$color-2: #1e946b;
+$color-3: #b6bcc2;
+
+$color-dark-1: #b87545;
+$color-dark-2: #a5c650;
+$color-dark-3: #fa9f5e;
+
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': $color-1
+    )
+  )
+);
