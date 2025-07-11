@@ -7,12 +7,12 @@
 		"docs:preview": "vitepress preview docs"
 	},
 	"dependencies": {
-		"ant-design-vue": "^4.2.6",
 		"element-plus": "^2.10.3",
 		"vue": "^3.5.17"
 	},
 	"devDependencies": {
 		"@iconify-json/mdi": "^1.2.3",
+		"@types/node": "^24.0.13",
 		"@vue/tsconfig": "^0.7.0",
 		"sass-embedded": "^1.89.2",
 		"unocss": "^66.3.3",

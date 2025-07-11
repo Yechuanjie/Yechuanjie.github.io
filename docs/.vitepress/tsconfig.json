@@ -6,8 +6,5 @@
     "jsx": "preserve",
     "noEmit": true,
     "allowImportingTsExtensions": true
-  },
-  "include": [
-    "./docs/.vitepress/**/*"
-  ]
+  }
 }

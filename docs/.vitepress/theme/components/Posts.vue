@@ -8,7 +8,7 @@
         <span class="font-size-14px font-600">{{ post.date.string }}</span>
         <span class="font-size-15px font-600"></span>
         <ElSpace>
-          <ElTag :checkable="false" v-for="tag in post.tags" :key="tag">{{ tag }}</ElTag>
+          <ElTag :checkable="false" v-for="tag in post.tags" :key="tag" disable-transitions>{{ tag }}</ElTag>
         </ElSpace>
       </div>
       <p v-html="post.excerpt"></p>
@@ -44,9 +44,9 @@ onMounted(() => {
   }
 
   :deep() {
-    // .arco-pagination-item + .arco-pagination-item {
-    //   margin-top: 0;
-    // }
+    .el-pager {
+      padding-left: 0;
+    }
   }
 }
 </style>

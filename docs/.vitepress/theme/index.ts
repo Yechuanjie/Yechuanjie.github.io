@@ -1,7 +1,8 @@
 import DefaultTheme from 'vitepress/theme'
 import { Theme, useData } from 'vitepress'
 import 'virtual:uno.css'
-import './custom.scss'
+import 'element-plus/theme-chalk/dark/css-vars.css'
+import './scss/custom.scss'
 
 import Layout from './components/Layout.vue'
 import Home from './components/Home.vue'

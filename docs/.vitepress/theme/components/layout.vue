@@ -15,6 +15,7 @@ const { isDark } = useData()
 watch(
   isDark,
   () => {
+    // element plus的暗黑模式和vitepress用法一致，无需单独处理
     console.info('isDark', isDark.value)
   },
   { immediate: true }

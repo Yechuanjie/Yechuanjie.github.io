@@ -3,13 +3,13 @@ import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import path from 'path'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'zh-CN',
   title: 'Yechuanjie',
   description: '',
-  // srcDir: 'src',
   cleanUrls: true,
   appearance: 'dark',
   themeConfig: {
@@ -37,34 +37,41 @@ export default defineConfig({
       prev: '上一篇',
       next: '下一篇'
     },
-    darkModeSwitchLabel: '外观',
+    darkModeSwitchLabel: '深色模式',
     returnToTopLabel: '返回顶部',
     sidebarMenuLabel: '菜单'
   },
   vite: {
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, './theme')
+      }
+    },
     css: {
       preprocessorOptions: {
         scss: {
           api: 'modern',
-          additionalData: `@use "docs/.vitepress/theme/element.scss" as *;`
+          additionalData: `@use "@/scss/variable.scss" as *;`
         }
       }
     },
     plugins: [
       AutoImport({
         imports: ['vue'],
-        dts: './.vitepress/theme/types/auto-imports.d.ts',
+        dts: './.vitepress/types/auto-imports.d.ts',
         resolvers: [ElementPlusResolver()]
       }),
+
       Components({
         resolvers: [
           ElementPlusResolver({
             importStyle: 'sass'
           })
         ],
-        dts: './.vitepress/theme/types/component.d.ts',
+        dts: './.vitepress/types/component.d.ts',
         directoryAsNamespace: true
       }),
+
       UnoCSS()
     ]
   }
