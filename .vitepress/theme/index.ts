@@ -1,11 +1,7 @@
-// https://vitepress.dev/guide/custom-theme
-import Layout from './Layout.vue'
 import type { Theme } from 'vitepress'
-import './style.css'
+import PureBolgTheme from '@ycj/vitepress-pure-blog'
 
 export default {
-  Layout,
-  enhanceApp({ app, router, siteData }) {
-    // ...
-  }
+  extends: PureBolgTheme,
+  enhanceApp({ app, router, siteData }) {}
 } satisfies Theme

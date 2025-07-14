@@ -11,7 +11,8 @@
     "skipLibCheck": true,
     "lib": [
       "ESNext",
-      "DOM"
+      "DOM",
+      "ES2021.String"
     ],
     "types": [],
     "baseUrl": "./",
