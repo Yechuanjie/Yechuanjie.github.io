@@ -17,7 +17,7 @@ export default defineConfig({
 
     nav: [
       { text: '首页', link: '/' },
-      { text: '博客', link: '/posts' },
+      { text: '记录', link: '/posts' },
       { text: '归档', link: '/archives' },
       { text: '关于', link: '/about' }
     ],

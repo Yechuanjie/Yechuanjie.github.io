@@ -4,7 +4,7 @@ import 'virtual:uno.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
 import './scss/custom.scss'
 
-import Layout from './components/Layout.vue'
+import Layout from './components/Wayout.vue'
 import Home from './components/Home.vue'
 import Posts from './components/Posts.vue'
 
