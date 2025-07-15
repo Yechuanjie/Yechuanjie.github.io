@@ -1,6 +1,6 @@
 ---
 title: 使用lottie-web制作高性能动画
-date: 2019-07-31 12:35:32
+date: 2019-07-31
 tags:
   - JavaScript
   - 动画

@@ -35,9 +35,3 @@ body {
   --td-brand-color-hover: var(--vp-c-brand-1) !important;
   --td-brand-color-active: var(--vp-c-brand-2) !important;
 }
-
-.dark {
-  .el-pagination.is-background .el-pager li.is-active {
-    background-color: var(--vp-c-brand-1);
-  }
-}

@@ -1,6 +1,7 @@
 {
 	"name": "blog",
 	"packageManager": "pnpm@10.12.4",
+	"type": "module",
 	"scripts": {
 		"docs:dev": "vitepress dev docs",
 		"docs:build": "vitepress build docs",

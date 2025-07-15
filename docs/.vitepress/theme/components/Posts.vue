@@ -1,60 +1,42 @@
 <template>
-  <div class="posts">
-    <div class="post-card" v-for="(post, idx) in postList" :key="idx">
-      <h2 class="">
-        <a :href="post.url" class="post-link">{{ post.title }}</a>
-      </h2>
-      <div class="flex-middle gap-1">
-        <span class="font-size-14px font-600">{{ post.date.string }}</span>
-        <span class="font-size-15px font-600"></span>
-        <ElSpace>
-          <ElTag :checkable="false" v-for="tag in post.tags" :key="tag" disable-transitions>{{ tag }}</ElTag>
-        </ElSpace>
-      </div>
-      <p v-html="post.excerpt"></p>
-    </div>
-
-    <ElPagination background layout="prev, pager, next" :total="posts.length" />
+  <div class="posts-page">
+    <el-timeline style="max-width: 900px">
+      <el-timeline-item
+        v-for="(activity, index) in postList"
+        :key="index"
+        :timestamp="activity.date"
+        placement="top"
+        color="var()"
+      >
+        <el-card class="cursor-pointer">
+          <div>{{ activity.title }}</div>
+          <div>{{ activity.summary }}</div>
+        </el-card>
+      </el-timeline-item>
+    </el-timeline>
   </div>
 </template>
 
 <script setup lang="ts">
-import { data as posts, Post } from '../posts.data.mts'
+// @ts-ignore
+import { data, PostItem } from '../../utils/posts.data'
 
-const postList = ref<Post[]>([])
+let posts = data as PostItem[]
+const postList = ref<PostItem[]>()
+
 onMounted(() => {
-  postList.value = posts.slice(0, 5)
+  console.info('posts', posts)
+  postList.value = posts
 })
 </script>
 <style lang="scss" scoped>
-/* 去掉.vp-doc li + li 的 margin-top */
-// .vp-doc ul, .vp-doc ol
-.pagination-container {
-  margin-top: 60px;
-  :deep(li) {
-    margin-top: 0px;
-  }
-}
-
-:deep() {
-  .el-pager {
-    padding-left: 0;
-  }
-}
-
-.posts {
-  .post-card {
-    &:first-child {
-      h2 {
-        border: none;
-        margin-top: 0;
-      }
+.posts-page {
+  :deep() {
+    .el-timeline-item {
+      list-style: none;
     }
-    .post-link {
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
+    .el-timeline-item + .el-timeline-item {
+      margin-top: 0;
     }
   }
 }

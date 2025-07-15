@@ -1,5 +1,5 @@
 import DefaultTheme from 'vitepress/theme'
-import { Theme, useData } from 'vitepress'
+import { inBrowser, Theme, useData } from 'vitepress'
 import 'virtual:uno.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
 import './scss/custom.scss'
@@ -11,7 +11,7 @@ import Posts from './components/Posts.vue'
 export default {
   extends: DefaultTheme,
   Layout: Layout,
-  enhanceApp({ app }) {
+  enhanceApp({ app, router }) {
     app.component('Home', Home)
     app.component('Posts', Posts)
   }
