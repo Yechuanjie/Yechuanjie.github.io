@@ -41,7 +41,7 @@
 
 <script lang="ts" setup>
 import { useData, withBase } from 'vitepress'
-import { IPost } from '../types'
+import { IPost } from '../type'
 import { useOutDir } from '../hooks/useOutdir'
 import { Icon } from '@iconify/vue'
 const { outDir } = useOutDir()

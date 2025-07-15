@@ -24,7 +24,7 @@
 
 <script lang="ts" setup>
 import { PropType, computed, onMounted } from 'vue'
-import { IAd, IAdsense } from '../types'
+import { IAd, IAdsense } from '../type'
 
 const props = defineProps({
   custom: Array<IAd | IAd[]>,

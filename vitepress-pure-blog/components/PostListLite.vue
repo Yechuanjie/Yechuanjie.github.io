@@ -14,12 +14,12 @@
 </template>
 
 <script lang="ts" setup>
-import { withBase } from 'vitepress';
-import { IPost } from '../types';
+import { withBase } from 'vitepress'
+import { IPost } from '../type'
 defineProps({
   posts: Array<IPost>,
   date: String
-});
+})
 </script>
 
 <style lang="scss" scoped>

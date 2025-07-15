@@ -9,7 +9,7 @@
 
 <script lang="ts" setup>
 import { PropType } from 'vue'
-import type { IGroup } from '../types'
+import type { IGroup } from '../type'
 
 defineProps({
   links: { type: Array<string>, required: true },

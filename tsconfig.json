@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    "target": "es2021",
+    "module": "es2022",
     "moduleResolution": "node",
     "strict": true,
     "jsx": "preserve",
@@ -10,23 +10,20 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "lib": [
-      "ESNext",
-      "DOM",
-      "ES2021.String"
+      "ES2021",
+      "DOM"
     ],
-    "types": [],
     "baseUrl": "./",
-    "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    }
   },
   "include": [
     ".vitepress/**/*.ts",
     ".vitepress/**/*.d.ts",
     ".vitepress/**/*.tsx",
     ".vitepress/**/*.vue",
+    "./vitepress-pure-blog/**/*.vue",
+    "./vitepress-pure-blog/**/*.ts",
+    "./vitepress-pure-blog/**/*.mts",
+    "./vitepress-pure-blog/**/*.d.ts",
     "shims-vue.d.ts"
   ],
   "exclude": [
