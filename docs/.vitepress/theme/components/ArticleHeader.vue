@@ -1,13 +1,12 @@
 <template>
-  <section class="article-header pl-64px">
-    是啊打撒的
+  <div class="article-header pl-64px">
+    <h1>文章Header组件，完善中...</h1>
     <!-- <h2>{{ frontmatter.title }}</h2> -->
-  </section>
+  </div>
 </template>
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import { useData } from 'vitepress'
-
+// import { useData } from 'vitepress'
 // const { frontmatter, page, params, site, theme, dir, localeIndex } = useData()
 // console.info('frontmatter.value', frontmatter.value)
 // console.info('page.value', page.value)

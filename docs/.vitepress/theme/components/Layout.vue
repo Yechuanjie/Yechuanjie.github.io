@@ -1,9 +1,12 @@
 <template>
   <ElConfigProvider :locale="zhCn">
     <Layout>
-      <!-- <template #doc-top>
-        <ArticleHeader></ArticleHeader>
-      </template> -->
+      <template #doc-before>
+        <slot name="doc-before" />
+        <ClientOnly>
+          <ArticleHeader></ArticleHeader>
+        </ClientOnly>
+      </template>
 
       <template #layout-bottom>
         <div class="flex-column-center pb-5">

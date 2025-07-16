@@ -14,6 +14,8 @@ export interface PostItem {
   timestamp: number
   /** 路径地址 */
   url: string
+  /** 封面图 */
+  cover: string
 }
 
 export default createContentLoader('posts/**/*.md', {
@@ -27,7 +29,8 @@ export default createContentLoader('posts/**/*.md', {
             date: dayjs(frontmatter.date).format('YYYY-MM-DD'),
             tags: frontmatter.tags,
             summary: frontmatter.summary,
-            timestamp: dayjs(frontmatter.date).unix()
+            timestamp: dayjs(frontmatter.date).unix(),
+            cover: frontmatter.cover
           }
         })
         // 倒序

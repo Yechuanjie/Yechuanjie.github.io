@@ -97,7 +97,7 @@ export default defineConfig({
         }
       }),
 
-      HeaderPlugin(),
+      // HeaderPlugin(),
 
       AutoImport({
         imports: ['vue'],

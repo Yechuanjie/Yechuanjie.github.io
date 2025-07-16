@@ -17,15 +17,20 @@
       >
         <a :href="post.url">
           <el-card class="cursor-pointer !rounded-8px">
-            <div class="flex items-center flex-wrap gap-2">
-              <div class="title">{{ post.title }}</div>
-              <div class="flex gap-2">
-                <el-tag v-for="(item, idx) in post.tags" :key="idx" type="primary">
-                  {{ item }}
-                </el-tag>
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="flex items-center flex-wrap gap-2">
+                  <div class="title">{{ post.title }}</div>
+                  <div class="flex gap-2">
+                    <el-tag v-for="(item, idx) in post.tags" :key="idx" type="primary">
+                      {{ item }}
+                    </el-tag>
+                  </div>
+                </div>
+                <div class="font-size-3.2 mt-2 color-[var(--grey-color-1)]">{{ post.summary }}</div>
               </div>
+              <img :src="post.cover" class="w-200px h-80px !m-0 rounded-1" v-if="post.cover" />
             </div>
-            <div class="font-size-3.2 mt-2 color-[var(--grey-color-1)]">{{ post.summary }}</div>
           </el-card>
         </a>
       </el-timeline-item>
