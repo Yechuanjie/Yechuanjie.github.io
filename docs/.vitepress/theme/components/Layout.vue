@@ -1,6 +1,10 @@
 <template>
   <ElConfigProvider :locale="zhCn">
     <Layout>
+      <!-- <template #doc-top>
+        <ArticleHeader></ArticleHeader>
+      </template> -->
+
       <template #layout-bottom>
         <div class="flex-column-center pb-5">
           <div class="font-size-14px">
@@ -21,6 +25,7 @@
 import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
+import ArticleHeader from './ArticleHeader.vue'
 
 const { Layout } = DefaultTheme
 const { isDark } = useData()

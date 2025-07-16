@@ -21,7 +21,6 @@ export default createContentLoader('posts/**/*.md', {
     return (
       raw
         .map(({ url, frontmatter, excerpt }) => {
-          console.info(url)
           return {
             url,
             title: frontmatter.title,

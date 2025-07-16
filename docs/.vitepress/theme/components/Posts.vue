@@ -1,10 +1,7 @@
 <template>
   <div class="home-page flex gap-10">
     <div class="my-card flex-column-center">
-      <img
-        src="https://github.com/Yechuanjie/picx-images-hosting/raw/master/20250707/0-hwq.6t7ef8n8x3.jpeg"
-        class="size-25 rounded-full !m-0"
-      />
+      <img src="/ycj.jpeg" class="size-25 rounded-full !m-0" />
       <span class="font-size-4 font-bold mt-4">Yechuanjie</span>
       <span class="font-size-3 mt-4">山不让尘，川不辞盈</span>
     </div>

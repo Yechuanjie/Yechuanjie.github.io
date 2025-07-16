@@ -7,6 +7,7 @@ import path from 'path'
 import { generateSidebar } from 'vitepress-sidebar'
 import { SidebarItem } from 'vitepress-sidebar/types'
 import { pagefindPlugin } from 'vitepress-plugin-pagefind'
+import { HeaderPlugin } from './plugins/articleHeaderPlugin.ts'
 
 const autoSidebar = () => {
   let result = generateSidebar({
@@ -77,8 +78,8 @@ export default defineConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          api: 'modern'
-          // additionalData: `@use "@/scss/variable.scss" as *;`
+          api: 'modern',
+          additionalData: `@use "@/scss/mixin.scss" as *;`
         }
       }
     },
@@ -95,6 +96,8 @@ export default defineConfig({
             .trim()
         }
       }),
+
+      HeaderPlugin(),
 
       AutoImport({
         imports: ['vue'],
