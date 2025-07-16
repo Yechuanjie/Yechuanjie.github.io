@@ -1,37 +1,55 @@
+@use './rewrite.scss';
+
 :root {
-  --vp-c-blue-1: #163f7e;
-  --vp-c-blue-2: #1e946b;
-  --vp-c-blue-3: #b6bcc2;
-  --vp-c-blue-soft: rgba(110, 156, 190, 0.14);
-
-  --vp-c-yellow-1: #b87545;
-  --vp-c-yellow-2: #a5c650;
-  --vp-c-yellow-3: #fa9f5e;
-  --vp-c-yellow-soft: rgba(186, 186, 186, 0.14);
-
-  --vp-c-brand-1: var(--vp-c-blue-1);
-  --vp-c-brand-2: var(--vp-c-blue-2);
-  --vp-c-brand-3: var(--vp-c-blue-3);
-  --vp-c-brand-soft: var(--vp-c-blue-soft);
+  --border-color-1: rgb(242, 243, 245);
+  --black-color-1: rgb(60, 60, 67);
+  --grey-color-1: rgb(134, 144, 156);
+  --grey-color-2: rgb(229, 230, 235);
+  --blue-color-1: rgb(22, 93, 255);
+  --border-radius: 8px;
+  img {
+    display: block;
+    margin: auto;
+    cursor: pointer;
+  }
+  .vp-doc {
+    h2:first-of-type {
+      margin: 10px 0 16px;
+      padding-top: 15px;
+    }
+  }
+  .VPHome {
+    margin-bottom: 23px;
+  }
 }
 
 .dark {
-  --vp-c-brand-1: var(--vp-c-yellow-1);
-  --vp-c-brand-2: var(--vp-c-yellow-2);
-  --vp-c-brand-3: var(--vp-c-yellow-3);
-  --vp-c-brand-soft: var(--vp-c-yellow-soft);
+  --border-color-1: rgba(255, 255, 255, 0.08);
+  --black-color-1: rgba(255, 255, 255, 0.9);
+  --grey-color-1: rgba(255, 255, 255, 0.5);
+  --grey-color-2: rgb(72, 72, 73);
+  --blue-color-1: rgb(60, 126, 255);
 }
 
-body {
-  line-height: unset;
+/* 黑暗模式切换动画 */
+::view-transition-old(*) {
+  animation: none;
+}
+::view-transition-new(*) {
+  animation: globalDark 0.6s ease-in;
+  -webkit-animation: globalDark 0.6s ease-in;
 }
 
-// todo 重置element plus的主题
-:root {
-  // --td-border-level-2-color: var(--vp-c-brand-soft) !important;
-  --td-border-level-2-color: #333222 !important;
-  --td-brand-color: var(--vp-c-brand-1) !important;
-  --td-brand-color-light: var(--vp-c-brand-soft) !important;
-  --td-brand-color-hover: var(--vp-c-brand-1) !important;
-  --td-brand-color-active: var(--vp-c-brand-2) !important;
+@keyframes globalDark {
+  from {
+    clip-path: circle(0% at var(--darkX) var(--darkY));
+  }
+  to {
+    clip-path: circle(100% at var(--darkX) var(--darkY));
+  }
+}
+
+/* 黑暗模式下图片低亮度化 */
+.dark img {
+  filter: brightness(0.8);
 }

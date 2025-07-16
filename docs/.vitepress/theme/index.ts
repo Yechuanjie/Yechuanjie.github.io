@@ -7,6 +7,7 @@ import './scss/custom.scss'
 import Layout from './components/Layout.vue'
 import Home from './components/Home.vue'
 import Posts from './components/Posts.vue'
+import About from './components/About.vue'
 
 export default {
   extends: DefaultTheme,
@@ -14,5 +15,6 @@ export default {
   enhanceApp({ app, router }) {
     app.component('Home', Home)
     app.component('Posts', Posts)
+    app.component('About', About)
   }
 } satisfies Theme

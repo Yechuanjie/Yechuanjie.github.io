@@ -2,13 +2,13 @@
   <ElConfigProvider :locale="zhCn">
     <Layout>
       <template #layout-bottom>
-        <div class="flex-column-center pb-10">
+        <div class="flex-column-center pb-5">
           <div class="font-size-14px">
             本站总访问量
             <span id="vercount_value_site_pv" class="font-bold">--</span> 次 本站访客数
             <span id="vercount_value_site_uv" class="font-bold">--</span> 人次
           </div>
-          <p class="mt-3 color-coolGray font-size-14px">
+          <p class="color-coolGray font-size-14px">
             {{ `Copyright © 2025 - present` }} <a href="https://github.com/Yechuanjie">Yechuanjie</a>
           </p>
         </div>
