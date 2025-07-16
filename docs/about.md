@@ -1,6 +1,7 @@
 ---
-layout: home
 title: 关于
 ---
 
-<About />
+#### 关于
+
+`敬请期待`

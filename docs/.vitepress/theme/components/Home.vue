@@ -1,85 +1,51 @@
 <template>
-  <div class="home-page flex gap-10">
-    <div class="my-card flex-column-center">
-      <img
-        src="https://github.com/Yechuanjie/picx-images-hosting/raw/master/20250707/0-hwq.6t7ef8n8x3.jpeg"
-        class="size-25 rounded-full !m-0"
-      />
-      <span class="font-size-4 font-bold mt-4">Yechuanjie</span>
-      <span class="font-size-3 mt-4">山不让尘，川不辞盈</span>
-    </div>
+  <div class="flex-center mt-30">
+    <div class="home-desc flex-center pos-sticky h-300px top-90px">
+      <div>
+        <div class="font-900 font-size-14 tracking-1 line-height-60px">Hi,</div>
+        <div class="font-900 font-size-14 tracking-1 line-height-60px">welcome.</div>
 
-    <el-timeline class="w-full">
-      <el-timeline-item
-        v-for="(post, index) in postList"
-        :key="index"
-        :timestamp="post.date"
-        placement="top"
-        hollow
-        color="var(--vp-c-brand-1)"
-      >
-        <el-card class="cursor-pointer !rounded-8px">
-          <a class="font-600 font-size-5" :href="post.url">{{ post.title }}</a>
-          <div class="mt-2 flex gap-2">
-            <el-tag v-for="(item, idx) in post.tags" :key="idx" type="primary">
-              {{ item }}
-            </el-tag>
-          </div>
-          <div class="font-size-3.2 mt-2">{{ post.summary }}</div>
-        </el-card>
-      </el-timeline-item>
-    </el-timeline>
+        <div class="flex">
+          <div class="tag px-4 py-0.5 border-1 border-solid rounded-2">You Only Live Once.</div>
+        </div>
+
+        <div class="flex gap-2 mt-10">
+          <a href="/posts" title="blog">
+            <div class="i-mdi-playlist-edit size-8 color-[var(--vp-c-text-1)]"></div>
+          </a>
+
+          <a href="https://github.com/Yechuanjie" title="github" target="_blank">
+            <div class="i-mdi-github size-8 color-[var(--vp-c-text-1)]"></div>
+          </a>
+
+          <a href="mailto:1102684711@qq.com" title="email">
+            <div class="i-mdi-email size-8 color-[var(--vp-c-text-1)]"></div>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
 import { onMounted } from 'vue'
-// @ts-ignore
-import { data, PostItem } from '../../utils/posts.data'
-
-const posts = data as PostItem[]
-const postList = ref<PostItem[]>()
-// const colorType = ['primary', 'success', 'info', 'warning', 'danger']
-
-onMounted(() => {
-  postList.value = posts
-})
 </script>
 <style lang="scss" scoped>
-.home-page {
-  .my-card {
-    position: sticky;
-    top: 90px;
-    width: 200px;
-    height: 260px;
-    border: 1px solid var(--border-color-1);
-    flex-shrink: 0;
-    padding: 20px 16px;
-  }
-
-  :deep() {
-    .el-timeline-item {
-      list-style: none;
-    }
-    .el-timeline-item + .el-timeline-item {
-      margin-top: 0;
-    }
-    // .el-timeline-item__timestamp.is-top {
-    //   position: absolute;
-    //   left: -80px;
-    //   font-size: 13px;
-    //   margin-bottom: 0;
-    // }
-  }
-}
-
-@media (max-width: 730px) {
-  .home-page {
-    flex-direction: column;
-    .my-card {
-      width: 100%;
-      min-width: 300px;
-      position: static;
-    }
+.tag {
+  position: relative;
+  margin-top: 20px;
+  &::after {
+    margin-right: 4px;
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-70%) rotate(70deg);
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--vp-c-text-1);
+    border-right: none;
+    border-top: none;
+    border-bottom-left-radius: 5px;
   }
 }
 </style>

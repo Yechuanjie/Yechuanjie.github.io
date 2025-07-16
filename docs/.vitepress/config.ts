@@ -6,6 +6,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import path from 'path'
 import { generateSidebar } from 'vitepress-sidebar'
 import { SidebarItem } from 'vitepress-sidebar/types'
+import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 
 const autoSidebar = () => {
   let result = generateSidebar({
@@ -16,7 +17,7 @@ const autoSidebar = () => {
     sortMenusOrderByDescending: true
   }) as SidebarItem[]
   return result.map((year) => {
-    console.info(year)
+    // 添加posts前缀
     year.items?.map((i) => {
       i.link = `/posts${i.link}`
     })
@@ -38,12 +39,17 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      // { text: '记录', link: '/posts' },
-      // { text: '归档', link: '/archives' },
+      { text: '记录', link: '/posts' },
+      { text: '归档', link: '/archives' },
       { text: '关于', link: '/about' }
     ],
 
     sidebar: autoSidebar(),
+
+    outline: {
+      level: 'deep',
+      label: '文章目录'
+    },
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/Yechuanjie' }],
 
@@ -77,6 +83,19 @@ export default defineConfig({
       }
     },
     plugins: [
+      pagefindPlugin({
+        btnPlaceholder: '搜索',
+        placeholder: '搜索文档',
+        emptyText: '空空如也',
+        heading: '共: {{searchResult}} 条结果',
+        customSearchQuery(input) {
+          return input
+            .replace(/[\u4E00-\u9FA5]/g, ' $& ')
+            .replace(/\s+/g, ' ')
+            .trim()
+        }
+      }),
+
       AutoImport({
         imports: ['vue'],
         dts: './.vitepress/types/auto-imports.d.ts',
