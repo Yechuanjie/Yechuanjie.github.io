@@ -1,5 +1,5 @@
 ---
-title: 使用lottie-web制作高性能动画
+title: lottie-websss 动画
 date: 2019-12-31
 tags:
   - JavaScript
@@ -8,7 +8,7 @@ summary: 🌾 Lottie 是一个库，用于解析AE制作的动画。
 showMeta: true
 ---
 
-# 使用 lottie-web 制作高性能动画
+# lottie-web 动画
 
 想提前看下效果的小伙伴请看[这里~](https://yechuanjie.github.io/lottie_demo)
 

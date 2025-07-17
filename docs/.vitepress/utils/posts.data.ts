@@ -20,7 +20,7 @@ export interface PostItem {
   showMeta: boolean
 }
 
-export default createContentLoader('posts/**/*.md', {
+export default createContentLoader('/posts/**/*.md', {
   transform(raw): PostItem[] {
     return (
       raw
