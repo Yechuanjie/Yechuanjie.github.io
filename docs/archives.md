@@ -1,6 +1,6 @@
 ---
 layout: home
-title: 归档
+title: 标签
 ---
 
 #### 归档

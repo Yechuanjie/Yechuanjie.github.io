@@ -3,4 +3,5 @@ layout: home
 title: 首页
 ---
 
-<Home />
+<!-- <Home /> -->
+<Posts />

@@ -4,8 +4,8 @@
       <template #doc-after>
         <GithubDiscuss></GithubDiscuss>
       </template>
-      <template #doc-bottom>
-        <Vercount></Vercount>
+      <template #layout-bottom>
+        <Vercount v-if="!isPost"></Vercount>
       </template>
     </Layout>
   </ElConfigProvider>
@@ -20,6 +20,9 @@ import imageViewer from 'vitepress-plugin-image-viewer'
 const { Layout } = DefaultTheme
 const { isDark } = useData()
 const route = useRoute()
+const isPost = computed(() => {
+  return route.path.includes('/posts')
+})
 // 图片放大
 imageViewer(route)
 
