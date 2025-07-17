@@ -1,7 +1,10 @@
 <template>
   <ElConfigProvider :locale="zhCn">
     <Layout>
-      <template #layout-bottom>
+      <template #doc-after>
+        <GithubDiscuss></GithubDiscuss>
+      </template>
+      <template #doc-bottom>
         <Vercount></Vercount>
       </template>
     </Layout>
@@ -9,12 +12,16 @@
 </template>
 
 <script setup lang="ts">
-import { useData } from 'vitepress'
+import { useData, useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
+import imageViewer from 'vitepress-plugin-image-viewer'
 
 const { Layout } = DefaultTheme
 const { isDark } = useData()
+const route = useRoute()
+// 图片放大
+imageViewer(route)
 
 watch(
   isDark,

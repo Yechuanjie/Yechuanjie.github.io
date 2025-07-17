@@ -17,6 +17,7 @@ declare module 'vue' {
     ElTag: typeof import('element-plus/es')['ElTag']
     ElTimeline: typeof import('element-plus/es')['ElTimeline']
     ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
+    GithubDiscuss: typeof import('./../theme/components/GithubDiscuss.vue')['default']
     Home: typeof import('./../theme/components/Home.vue')['default']
     Layout: typeof import('./../theme/components/Layout.vue')['default']
     Posts: typeof import('./../theme/components/Posts.vue')['default']
