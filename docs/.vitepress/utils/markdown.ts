@@ -9,16 +9,8 @@ export const markdown: MarkdownOptions = {
     md.renderer.rules.heading_close = (tokens, idx, options, env, slf) => {
       let htmlResult = slf.renderToken(tokens, idx, options)
       if (tokens[idx].tag === 'h1')
-        htmlResult += `\n<ClientOnly><ArticleMetadata :article="$frontmatter" /></ClientOnly>`
+        htmlResult += `\n<ClientOnly><ArticleMetaInfo v-if="$frontmatter?.showMeta ?? true" /></ClientOnly>`
       return htmlResult
     }
   }
-  // config: (md) => {
-  //   md.renderer.rules.heading_close = (tokens, idx, options, env, slf) => {
-  //     let htmlResult = slf.renderToken(tokens, idx, options)
-  //     if (tokens[idx].tag === 'h1')
-  //       htmlResult += `\n<ClientOnly><ArticleMetadata v-if="($frontmatter?.aside ?? true) && ($frontmatter?.showArticleMetadata ?? true)" :article="$frontmatter" /></ClientOnly>`
-  //     return htmlResult
-  //   }
-  // }
 }

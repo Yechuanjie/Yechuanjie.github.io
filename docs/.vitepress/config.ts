@@ -7,7 +7,7 @@ import path from 'path'
 import { generateSidebar } from 'vitepress-sidebar'
 import { SidebarItem } from 'vitepress-sidebar/types'
 import { pagefindPlugin } from 'vitepress-plugin-pagefind'
-import { markdown } from './utils/markdown.ts'
+import { markdown } from './utils/markdown'
 
 const autoSidebar = () => {
   let result = generateSidebar({
@@ -19,11 +19,12 @@ const autoSidebar = () => {
   }) as SidebarItem[]
   return result.map((year) => {
     // 添加posts前缀
-    year.items?.map((i) => {
+    year.items?.forEach((i) => {
       i.link = `/posts${i.link}`
     })
     return {
       ...year,
+      text: `${year.text}（${year.items?.length}篇） `,
       items: year.items?.reverse()
     }
   })
@@ -31,7 +32,7 @@ const autoSidebar = () => {
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'Yechuanjie',
+  title: 'Lito',
   description: '',
   lang: 'zh-CN',
   head: [['link', { rel: 'icon', href: '/green_book.png' }]],

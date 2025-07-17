@@ -9,6 +9,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     ArticleMetadata: typeof import('./../theme/components/ArticleMetadata.vue')['default']
+    ArticleMetaInfo: typeof import('./../theme/components/ArticleMetaInfo.vue')['default']
     ElCard: typeof import('element-plus/es')['ElCard']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
     ElPagination: typeof import('element-plus/es')['ElPagination']
@@ -19,6 +20,7 @@ declare module 'vue' {
     Home: typeof import('./../theme/components/Home.vue')['default']
     Layout: typeof import('./../theme/components/Layout.vue')['default']
     Posts: typeof import('./../theme/components/Posts.vue')['default']
+    TagList: typeof import('./../theme/components/TagList.vue')['default']
     Vercount: typeof import('./../theme/components/Vercount.vue')['default']
   }
 }

@@ -14,8 +14,10 @@ export interface PostItem {
   timestamp: number
   /** 路径地址 */
   url: string
-  /** 封面图 */
+  /** 列表封面图 */
   cover: string
+  /** 是否显示文章meta信息（标题下方的信息）, 默认显示 */
+  showMeta: boolean
 }
 
 export default createContentLoader('posts/**/*.md', {
@@ -30,7 +32,8 @@ export default createContentLoader('posts/**/*.md', {
             tags: frontmatter.tags,
             summary: frontmatter.summary,
             timestamp: dayjs(frontmatter.date).unix(),
-            cover: frontmatter.cover
+            cover: frontmatter.cover,
+            showMeta: frontmatter.showMeta ?? true
           }
         })
         // 倒序

@@ -5,6 +5,7 @@ tags:
   - JavaScript
   - 动画
 summary: 🌾 Lottie 是一个库，用于解析AE制作的动画。
+showMeta: true
 ---
 
 # 使用 lottie-web 制作高性能动画 ssss

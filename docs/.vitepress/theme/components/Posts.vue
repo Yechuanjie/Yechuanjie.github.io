@@ -2,8 +2,8 @@
   <div class="home-page flex gap-10">
     <div class="my-card flex-column-center">
       <img src="/ycj.jpeg" class="size-25 rounded-full !m-0" />
-      <span class="font-size-4 font-bold mt-4">Yechuanjie</span>
-      <span class="font-size-3 mt-4">{{ theme }}</span>
+      <span class="font-size-4 font-bold mt-4">Yecuk</span>
+      <span class="font-size-3 mt-4">山不让尘，川不辞盈</span>
     </div>
 
     <el-timeline class="w-full">
@@ -17,19 +17,16 @@
       >
         <a :href="post.url">
           <el-card class="cursor-pointer !rounded-8px">
-            <div class="flex items-center justify-between">
-              <div>
-                <div class="flex items-center flex-wrap gap-2">
-                  <div class="title">{{ post.title }}</div>
-                  <div class="flex gap-2">
-                    <el-tag v-for="(item, idx) in post.tags" :key="idx" type="primary">
-                      {{ item }}
-                    </el-tag>
-                  </div>
+            <div>
+              <div class="flex items-center flex-wrap gap-2">
+                <div class="title">{{ post.title }}</div>
+                <div class="flex gap-2">
+                  <el-tag v-for="(item, idx) in post.tags" :key="idx" type="primary">
+                    {{ item }}
+                  </el-tag>
                 </div>
-                <div class="font-size-3.2 mt-2 color-[var(--grey-color-1)]">{{ post.summary }}</div>
               </div>
-              <img :src="post.cover" class="w-200px h-80px !m-0 rounded-1" v-if="post.cover" />
+              <div class="font-size-3.2 mt-2 color-[var(--grey-color-1)]">{{ post.summary }}</div>
             </div>
           </el-card>
         </a>
@@ -38,7 +35,6 @@
   </div>
 </template>
 <script setup lang="ts">
-import { onMounted } from 'vue'
 // @ts-ignore
 import { data, PostItem } from '../../utils/posts.data'
 import { useData } from 'vitepress'
@@ -73,12 +69,10 @@ const posts = data as PostItem[]
     .el-timeline-item + .el-timeline-item {
       margin-top: 0;
     }
-    // .el-timeline-item__timestamp.is-top {
-    //   position: absolute;
-    //   left: -80px;
-    //   font-size: 13px;
-    //   margin-bottom: 0;
-    // }
+    .el-card__body {
+      // min-height: 100px;
+      // padding: 12px 20px;
+    }
   }
 }
 
@@ -92,6 +86,14 @@ const posts = data as PostItem[]
     }
     .title {
       font-size: 16px;
+    }
+    .post-img {
+      display: none;
+    }
+    :deep() {
+      .el-card__body {
+        padding: 12px;
+      }
     }
   }
 }
