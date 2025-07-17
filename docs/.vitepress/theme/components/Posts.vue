@@ -3,7 +3,7 @@
     <div class="my-card flex-column-center">
       <img src="/ycj.jpeg" class="size-25 rounded-full !m-0" />
       <span class="font-size-4 font-bold mt-4">Yechuanjie</span>
-      <span class="font-size-3 mt-4">山不让尘，川不辞盈</span>
+      <span class="font-size-3 mt-4">{{ theme }}</span>
     </div>
 
     <el-timeline class="w-full">
@@ -41,7 +41,11 @@
 import { onMounted } from 'vue'
 // @ts-ignore
 import { data, PostItem } from '../../utils/posts.data'
+import { useData } from 'vitepress'
 
+const { frontmatter, theme } = useData()
+
+console.info(theme.value)
 const posts = data as PostItem[]
 </script>
 <style lang="scss" scoped>

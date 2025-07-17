@@ -7,7 +7,7 @@ import './scss/custom.scss'
 import Layout from './components/Layout.vue'
 import Home from './components/Home.vue'
 import Posts from './components/Posts.vue'
-// import ArticleHeader from './components/ArticleHeader.vue'
+import ArticleMetaData from './components/ArticleMetaData.vue'
 
 export default {
   extends: DefaultTheme,
@@ -15,6 +15,6 @@ export default {
   enhanceApp({ app, router, siteData }) {
     app.component('Home', Home)
     app.component('Posts', Posts)
-    // app.component('ArticleHeader', ArticleHeader)
+    app.component('ArticleMetaData', ArticleMetaData)
   }
 } satisfies Theme

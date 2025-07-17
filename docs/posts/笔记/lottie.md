@@ -8,6 +8,8 @@ summary: 🌾 Lottie 是一个库，用于解析AE制作的动画。
 cover: https://github.com/Yechuanjie/picx-images-hosting/raw/master/20250707/0-hwq.6t7ef8n8x3.jpeg
 ---
 
+# 使用 lottie-web 制作高性能动画
+
 想提前看下效果的小伙伴请看[这里~](https://yechuanjie.github.io/lottie_demo)
 
 ### Lottie 简介

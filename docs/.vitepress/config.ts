@@ -7,7 +7,7 @@ import path from 'path'
 import { generateSidebar } from 'vitepress-sidebar'
 import { SidebarItem } from 'vitepress-sidebar/types'
 import { pagefindPlugin } from 'vitepress-plugin-pagefind'
-import { HeaderPlugin } from './plugins/articleHeaderPlugin.ts'
+import { markdown } from './utils/markdown.ts'
 
 const autoSidebar = () => {
   let result = generateSidebar({
@@ -37,6 +37,9 @@ export default defineConfig({
   head: [['link', { rel: 'icon', href: '/green_book.png' }]],
   cleanUrls: true,
   appearance: 'dark',
+
+  markdown: markdown,
+
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
@@ -48,7 +51,7 @@ export default defineConfig({
     sidebar: autoSidebar(),
 
     outline: {
-      level: 'deep',
+      level: [1, 6],
       label: '文章目录'
     },
 
@@ -106,6 +109,8 @@ export default defineConfig({
       }),
 
       Components({
+        dirs: ['./.vitepress/theme/components'],
+        include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
         resolvers: [
           ElementPlusResolver({
             importStyle: 'sass'

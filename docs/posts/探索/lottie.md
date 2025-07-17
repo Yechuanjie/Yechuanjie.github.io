@@ -7,9 +7,7 @@ tags:
 summary: 🌾 Lottie 是一个库，用于解析AE制作的动画。
 ---
 
-🌾 `Lottie` 是一个库，用于解析使用 [AE](https://www.adobe.com/cn/products/aftereffects.html) 制作的动画（动画需要通过 AE 中的 bodymovin 插件将其导出为 json 数据格式），支持`web`、`ios`、`android` 和 `react native`。
-
----
+# 使用 lottie-web 制作高性能动画 ssss
 
 想提前看下效果的小伙伴请看[这里~](https://yechuanjie.github.io/lottie_demo)
 
