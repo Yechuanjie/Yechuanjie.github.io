@@ -279,7 +279,7 @@ app.listen(3001, () => {
 })
 ```
 
-mock 数据根据需求在`src/mock/mock.mjs`中自定义修改，更多 mock 使用方式可以查看[mock 官方示例](<%5Bhttp://mockjs.com/examples.html%5D(http://mockjs.com/examples.html)>)。
+mock 数据根据需求在`src/mock/mock.mjs`中自定义修改，更多 mock 使用方式可以查看[mock 官方示例](https://mockjs.com/examples.html)。
 
 `src/mock/mock.mjs`
 
@@ -376,7 +376,7 @@ module.exports = function (app) {
 
 #### <span id="webpack">✅ 支持自定义 webpack 配置</span>
 
-通过 `customize-cra` 暴露 `webpack` 配置的`config-overrides.js`文件，使我们可以不用 `eject` 的方式就能在这里覆盖重写 `webpack` 配置，目前已支持几十种相关配置自定义，具体可查看[customize-cra api docs](<[https://github.com/arackaf/customize-cra/blob/HEAD/api.md](https://github.com/arackaf/customize-cra/blob/HEAD/api.md)>)。
+通过 `customize-cra` 暴露 `webpack` 配置的`config-overrides.js`文件，使我们可以不用 `eject` 的方式就能在这里覆盖重写 `webpack` 配置，目前已支持几十种相关配置自定义，具体可查看[customize-cra api docs](https://github.com/arackaf/customize-cra/blob/HEAD/api.md)。
 
 [▲  回顶部](#top)
 
