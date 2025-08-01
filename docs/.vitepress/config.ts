@@ -55,6 +55,11 @@ export default defineConfig({
         '@': path.resolve(__dirname, './theme')
       }
     },
+
+    ssr: {
+      noExternal: ['element-plus']
+    },
+
     css: {
       preprocessorOptions: {
         scss: {
