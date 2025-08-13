@@ -19,5 +19,11 @@ const toTag = (tag: string) => {
     color: var(--grey-color-1);
     font-size: 14px;
   }
+
+  @media (max-width: 540px) {
+    span {
+      font-size: 13px;
+    }
+  }
 }
 </style>

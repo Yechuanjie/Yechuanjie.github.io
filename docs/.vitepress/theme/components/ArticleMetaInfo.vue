@@ -1,6 +1,6 @@
 <template>
   <div class="article-meta-info mt-10px">
-    <div class="flex-middle gap-20px">
+    <div class="list flex-middle flex-wrap gap-20px">
       <div class="flex-middle gap-1">
         <span class="i-mdi-account-outline"></span>
         <span class="cursor-pointer" @click="router.go('/')">{{ author }}</span>
@@ -46,9 +46,19 @@ const toTag = (tag: string) => {
 
 <style scoped lang="scss">
 .article-meta-info {
-  span {
-    color: var(--grey-color-1);
-    font-size: 14px;
+  .list {
+    transition: all 0.2s;
+    span {
+      color: var(--grey-color-1);
+      font-size: 14px;
+    }
+
+    @media (max-width: 540px) {
+      gap: 10px;
+      span {
+        font-size: 13px;
+      }
+    }
   }
 
   .summary {
