@@ -17,6 +17,8 @@ declare module 'vue' {
     GithubDiscuss: typeof import('./../theme/components/GithubDiscuss.vue')['default']
     Home: typeof import('./../theme/components/Home.vue')['default']
     Layout: typeof import('./../theme/components/Layout.vue')['default']
+    Photos: typeof import('../theme/components/PhotoWall.vue')['default']
+    PhotoWall: typeof import('./../theme/components/PhotoWall.vue')['default']
     Posts: typeof import('./../theme/components/Posts.vue')['default']
     TagList: typeof import('./../theme/components/TagList.vue')['default']
     Vercount: typeof import('./../theme/components/Vercount.vue')['default']

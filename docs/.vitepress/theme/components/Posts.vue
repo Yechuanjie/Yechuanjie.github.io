@@ -6,8 +6,8 @@
       <span class="font-size-3 mt-4">山不让尘，川不辞盈</span>
     </div>
 
-    <el-timeline class="w-full">
-      <el-timeline-item
+    <ElTimeline class="w-full">
+      <ElTimelineItem
         v-for="(post, index) in posts"
         :key="index"
         :timestamp="post.date"
@@ -16,7 +16,7 @@
         color="var(--vp-c-brand-1)"
       >
         <a :href="post.url">
-          <el-card class="cursor-pointer !rounded-8px">
+          <ElCard class="cursor-pointer !rounded-8px">
             <div>
               <div class="flex items-center flex-wrap gap-2">
                 <div class="title">{{ post.title }}</div>
@@ -28,10 +28,10 @@
               </div>
               <div class="font-size-3.2 mt-2 color-[var(--grey-color-1)]">{{ post.summary }}</div>
             </div>
-          </el-card>
+          </ElCard>
         </a>
-      </el-timeline-item>
-    </el-timeline>
+      </ElTimelineItem>
+    </ElTimeline>
   </div>
 </template>
 <script setup lang="ts">

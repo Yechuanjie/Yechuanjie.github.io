@@ -21,6 +21,7 @@
 		"@yicode/yidocs-auto": "^1.6.3",
 		"colorette": "^2.0.20",
 		"fast-glob": "^3.3.3",
+		"flexsearch": "^0.8.205",
 		"lodash-es": "^4.17.21",
 		"sass-embedded": "^1.89.2",
 		"unocss": "^66.3.3",
@@ -30,7 +31,7 @@
 		"vite-plugin-vitepress-auto-sidebar": "^1.7.1",
 		"vitepress": "^1.6.3",
 		"vitepress-plugin-image-viewer": "^1.1.6",
-		"vitepress-plugin-pagefind": "^0.4.14",
+		"vitepress-plugin-search": "1.0.4-alpha.22",
 		"vitepress-sidebar": "^1.32.1"
 	}
 }

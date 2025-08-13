@@ -4,12 +4,11 @@ date: 2025-07-15
 tags:
   - react
   - 框架
-summary: 🎉 `react` 移动端开发脚手架，技术栈 `react` + `antd-moblie` + `typescript` + `react-router` + `redux`
+summary: react移动端开发脚手架  🎉
+showMeta: true
 ---
 
 # react-cli
-
-🎉 `react` 移动端开发脚手架，技术栈 `react` + `antd-moblie` + `typescript` + `react-router` + `redux`
 
 该脚手架基于 [Create React App](https://www.html.cn/create-react-app/) 创建，方便快速搭建 react 移动端项目。[仓库地址](https://github.com/Yechuanjie/react-cli) && [项目地址（请在移动端查看）](https://yechuanjie.top/react-cli/index)
 

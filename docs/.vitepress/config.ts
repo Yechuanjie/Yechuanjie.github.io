@@ -1,12 +1,13 @@
 import { defineConfig } from 'vitepress'
 import UnoCSS from 'unocss/vite'
+import path from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import path from 'path'
-import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 import { markdown } from './utils/markdown'
 import { autoSidebar } from './utils/autoSidebar'
+// @ts-ignore
+import { SearchPlugin } from 'vitepress-plugin-search'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -69,20 +70,12 @@ export default defineConfig({
       }
     },
     plugins: [
-      pagefindPlugin({
-        btnPlaceholder: '搜索',
-        placeholder: '搜索文档',
-        emptyText: '空空如也',
-        heading: '共: {{searchResult}} 条结果',
-        customSearchQuery(input) {
-          return input
-            .replace(/[\u4E00-\u9FA5]/g, ' $& ')
-            .replace(/\s+/g, ' ')
-            .trim()
-        }
+      SearchPlugin({
+        tokenize: 'full', // 开启完整分词模式
+        previewLength: 62,
+        buttonLabel: '搜索',
+        placeholder: '请输入关键词...'
       }),
-
-      // HeaderPlugin(),
 
       AutoImport({
         imports: ['vue'],
